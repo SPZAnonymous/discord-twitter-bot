@@ -7,49 +7,7 @@ from datetime import datetime
 
 
 COLORS = [
-    0x7F0000,
-    0x535900,
-    0x40D9FF,
-    0x8C7399,
-    0xD97B6C,
-    0xF2FF40,
-    0x8FB6BF,
-    0x502D59,
-    0x66504D,
-    0x89B359,
-    0x00AAFF,
-    0xD600E6,
-    0x401100,
-    0x44FF00,
-    0x1A2B33,
-    0xFF00AA,
-    0xFF8C40,
-    0x17330D,
-    0x0066BF,
-    0x33001B,
-    0xB39886,
-    0xBFFFD0,
-    0x163A59,
-    0x8C235B,
-    0x8C5E00,
-    0x00733D,
-    0x000C59,
-    0xFFBFD9,
-    0x4C3300,
-    0x36D98D,
-    0x3D3DF2,
-    0x590018,
-    0xF2C200,
-    0x264D40,
-    0xC8BFFF,
-    0xF23D6D,
-    0xD9C36C,
-    0x2DB3AA,
-    0xB380FF,
-    0xFF0022,
-    0x333226,
-    0x005C73,
-    0x7C29A6,
+    0x39FF14
 ]
 WH_REGEX = r"discord(app)?\.com\/api\/webhooks\/(?P<id>\d+)\/(?P<token>.+)"
 
@@ -386,8 +344,8 @@ class Processor:
             icon_url=self.status_tweet["user"]["profile_image_url"],
         )
         self.embed.set_footer(
-            text="Tweet created on",
-            icon_url="https://cdn1.iconfinder.com/data/icons/iconza-circle-social/64/697029-twitter-512.png",
+            text="Tweet criado às",
+            icon_url="https://th.bing.com/th/id/R.cdeea32c97161a151a317e63c3ad618c?rik=6%2b17a9P7uYA18g&pid=ImgRaw&r=0",
         )
 
     def send_message(self, wh_url):
