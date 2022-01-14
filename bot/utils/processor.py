@@ -359,7 +359,7 @@ class Processor:
                 if self.discord_config.get("CreateEmbed", True):
                     webhook.send(
                         embed=self.embed,
-                        components = [Button(label="Clique aqui para ver o Tweet", url=self.url)]
+                        components = [Button(label="Clique aqui para ver o Tweet", url=self.url)],
                         content=self.discord_config.get("custom_message", "").format(
                             user=self.user, text=self.text, url=self.url
                         ),
