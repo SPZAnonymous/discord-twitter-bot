@@ -4,8 +4,8 @@ from discord import Webhook, RequestsWebhookAdapter, Embed
 import discord
 import random
 from datetime import datetime
-from discord_slash.utils.manage_components import create_button, create_actionrow
-from discord_slash.model import ButtonStyle
+from discord_components import Button, Select, SelectOption, ComponentsBot
+
 
 COLORS = [
     0x15B80B
@@ -360,9 +360,7 @@ class Processor:
                 if self.discord_config.get("CreateEmbed", True):
                     webhook.send(
                         embed=self.embed,
-                        components = [
-                        create_button(style=ButtonStyle.green, label="Teste botão"),
-                        ],
+                        components = [Button(label="Teste botão", url=self.url)],
                         content=self.discord_config.get("custom_message", "").format(
                             user=self.user, text=self.text, url=self.url
                         ),
