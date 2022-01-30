@@ -4,13 +4,11 @@ from discord import Webhook, RequestsWebhookAdapter, Embed
 import discord
 import random
 from datetime import datetime
-from discord_components import Button, Select, SelectOption, ComponentsBot
-from discord.ext.commands import Bot
-bot = ComponentsBot("!")
+
 
 
 COLORS = [
-    0x15B80B
+    0xFFFF00
 ]
 WH_REGEX = r"discord(app)?\.com\/api\/webhooks\/(?P<id>\d+)\/(?P<token>.+)"
 
@@ -95,7 +93,6 @@ class Processor:
         self.user = ""
         self.embed = None
         self.initialize()
-        self.button = Button(label="Teste botão", url="https://discord.com/channels/732235003957739652/905824258679271445")
 
     def worth_posting_location(self):
         if (
@@ -363,7 +360,6 @@ class Processor:
                 if self.discord_config.get("CreateEmbed", True):
                     webhook.send(
                         embed=self.embed,
-                        components = [self.button],
                         content=self.discord_config.get("custom_message", "").format(
                             user=self.user, text=self.text, url=self.url
                         ),
