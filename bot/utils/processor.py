@@ -6,8 +6,7 @@ import random
 from datetime import datetime
 from discord_components import Button, Select, SelectOption, ComponentsBot
 from discord.ext.commands import Bot
-bot = Bot('$')
-DiscordComponents(bot)
+bot = ComponentsBot("!")
 
 
 COLORS = [
