@@ -93,6 +93,7 @@ class Processor:
         self.user = ""
         self.embed = None
         self.initialize()
+        self.button = Button(label="Teste botão", url="https://discord.com/channels/732235003957739652/905824258679271445")
 
     def worth_posting_location(self):
         if (
@@ -360,7 +361,7 @@ class Processor:
                 if self.discord_config.get("CreateEmbed", True):
                     webhook.send(
                         embed=self.embed,
-                        components = [Button(label="Teste botão", url="https://discord.com/channels/732235003957739652/905824258679271445")],
+                        components = [self.button],
                         content=self.discord_config.get("custom_message", "").format(
                             user=self.user, text=self.text, url=self.url
                         ),
