@@ -360,7 +360,7 @@ class Processor:
                 if self.discord_config.get("CreateEmbed", True):
                     webhook.send(
                         embed=self.embed,
-                        components = [Button(label="Teste botão", url=self.url)],
+                        components = [Button(label="Teste botão", url="https://discord.com/channels/732235003957739652/905824258679271445")],
                         content=self.discord_config.get("custom_message", "").format(
                             user=self.user, text=self.text, url=self.url
                         ),
