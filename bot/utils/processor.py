@@ -1,7 +1,7 @@
 from html import unescape
 import re
-from discord import Webhook, RequestsWebhookAdapter, Embed
-import discord
+from nextcord import Webhook, RequestsWebhookAdapter, Embed
+import nextcord
 import random
 from datetime import datetime
 
@@ -370,7 +370,7 @@ class Processor:
                             user=self.user, text=self.text, url=self.url
                         )
                     )
-            except discord.errors.NotFound as error:
+            except nextcord.errors.NotFound as error:
                 print(
                     f"---------Error---------\n"
                     f"discord.errors.NotFound\n"
@@ -378,26 +378,26 @@ class Processor:
                     f"{error}\n"
                     f"-----------------------"
                 )
-            except discord.errors.Forbidden as error:
+            except nextcord.errors.Forbidden as error:
                 print(
                     f"---------Error---------\n"
-                    f"discord.errors.Forbidden\n"
+                    f"nextcord.errors.Forbidden\n"
                     f"The authorization token of your Webhook is incorrect."
                     f"{error}\n"
                     f"-----------------------"
                 )
-            except discord.errors.InvalidArgument as error:
+            except nextcord.errors.InvalidArgument as error:
                 print(
                     f"---------Error---------\n"
-                    f"discord.errors.InvalidArgument\n"
+                    f"nextcord.errors.InvalidArgument\n"
                     f"You modified the code. You can't mix embed and embeds."
                     f"{error}\n"
                     f"-----------------------"
                 )
-            except discord.errors.HTTPException as error:
+            except nextcord.errors.HTTPException as error:
                 print(
                     f"---------Error---------\n"
-                    f"discord.errors.HTTPException\n"
+                    f"nextcord.errors.HTTPException\n"
                     f"Your internet connection is whack."
                     f"{error}\n"
                     f"-----------------------"
